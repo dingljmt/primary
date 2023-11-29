@@ -1,0 +1,32 @@
+:root {
+    --theme-color: #1267d6;
+    --transition: 0.2s;
+    --scrollbar-width: 8px
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #AAA;
+    border-radius: calc(var(--scrollbar-width) / 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.active {
+    transition: var(--transition);
+}

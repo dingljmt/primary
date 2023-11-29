@@ -1,0 +1,53 @@
+:root {
+    --transition: 0.3s;
+}
+
+body {
+    text-align: left;
+}
+
+#case-list-dinglj-container {
+    display: flex;
+    height: calc(100% - 20px);
+    padding: 10px;
+}
+
+#right-of-navigator {
+    --padding: 10px;
+    flex: 1;
+    box-shadow: 0 0 10px -4px grey;
+    margin-left: 10px;
+    border-radius: 5px;
+    height: calc(100% - 2 * var(--padding));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+}
+
+#case-list-view {
+    flex: 1;
+    overflow: hidden;
+}
+
+.every-tab {
+    height: 100%;
+    padding: 0 10px;
+}
+
+#case-filter {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#case-filter * {
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.dinglj-v-tbody .dinglj-v-cell.ticket * {
+    font-weight: bold;
+    color: var(--theme-color);
+}

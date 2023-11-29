@@ -1,0 +1,243 @@
+:root {
+    --timing-fun: ease-in-out;
+}
+
+#dinglj-v-navigator {
+    max-width: 380px;
+    min-width: 180px;
+    box-shadow: 0 0 10px -4px grey;
+    height: calc(100% - 20px);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dinglj-v-navigator-item {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 0;
+    margin: 5px 0;
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+    text-indent: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dinglj-v-navigator-item:not(.active):hover {
+    background: rgb(219, 219, 219);
+}
+
+.dinglj-v-navigator-item.active {
+    text-indent: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.dinglj-v-navigator-item::before {
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: var(--theme-color);
+    z-index: -1;
+}
+
+.dinglj-v-navigator-item.active::before {
+    width: 100%;
+}
+
+.dinglj-v-navigator-item::after {
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 70%;
+    top: 15%;
+    left: 5px;
+    background: white;
+}
+
+.dinglj-v-navigator-item.active::after {
+    width: 3px;
+}
+
+.dinglj-v-column-scroll {
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dinglj-v-column-scroll > * {
+    flex: 1;
+}
+
+.dinglj-v-row-scroll {
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+    position: relative;
+    height: 100%;
+    display: flex;
+}
+
+.dinglj-v-row-scroll > * {
+    flex: 1;
+}
+
+.dinglj-v-tab-panel {
+    height: 100%;
+    padding-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabl-panel-item {
+    display: inline-block;
+    margin: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tab-panel-view {
+    flex: 1;
+    overflow: hidden;
+}
+
+.dinglj-v-btn.primary {
+    color: white;
+    background: var(--theme-color);
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+}
+
+.dinglj-v-btn.primary:hover {
+    background: #3383ec;
+}
+
+.dinglj-v-btn.primary:active {
+    background: #004caf;
+}
+
+.dinglj-v-tr {
+    display: flex;
+}
+
+.flex-column {
+    flex: 1;
+}
+
+.dinglj-v-tr .dinglj-v-cell {
+    padding: 0 10px;
+    user-select: none;
+    border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.dinglj-v-tr .dinglj-v-cell:nth-child(1) {
+    border-left: none;
+}
+
+.dinglj-v-tbody .dinglj-v-tr:nth-child(even) {
+    background: #dbe3eb;
+}
+
+.dinglj-v-tbody .dinglj-v-tr:hover {
+    background: #a0c5e8;
+}
+
+.dinglj-v-tbody {
+    flex: 1;
+    overflow: scroll;
+}
+
+.dinglj-v-table {
+    overflow: hidden;
+    line-height: 34px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dinglj-v-thead {
+    margin-right: var(--scrollbar-width);
+    background: #263238;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dinglj-v-switch {
+    display: inline-block;
+    user-select: none;
+}
+
+.dinglj-v-switch > * {
+    display: inline-block;
+}
+
+.dinglj-v-switch-btn {
+    position: relative;
+    height: 14px;
+    width: 30px;
+    line-height: initial;
+    vertical-align: middle;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 0 5px;
+    background: #e7e0e0;
+    cursor: pointer;
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+}
+
+.dinglj-v-switch-btn div {
+    height: 12px;
+    width: 12px;
+    margin: 0.5px;
+    border-radius: 50%;
+    background: white;
+    transition: var(--transition);
+    transition-timing-function: var(--timing-fun);
+}
+
+.dinglj-v-switch-btn.active {
+    background: var(--theme-color);
+}
+
+.dinglj-v-switch-btn.active div {
+    transform: translate(16px)
+}
+
+.tabl-panel-item.active {
+    font-weight: bolder;
+    color: var(--theme-color);
+}
+
+.tab-panel-title {
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.dinglj-v-tab-float {
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: var(--theme-color);
+    bottom: 0px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
