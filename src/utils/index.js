@@ -60,6 +60,13 @@ defunc(window.dinglj, 'linkCss', function (href) {
     }
 });
 
+/** 同步加载 css 样式 */
+defunc(window.dinglj, 'linkCss', function (prefix, href) {
+    let styleElement = document.createElement('style');
+    styleElement.innerHTML = dinglj.get(`${ prefix }${ href }`);
+    document.head.appendChild(styleElement);
+});
+
 /** 重载定义 groupBy, exp 如果是 string, 则取该属性名, 如果是 function, 则调用取 key */
 defunc(window.dinglj, 'groupBy', (list, exp) => {
     let result = {};
